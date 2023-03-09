@@ -9,13 +9,19 @@ namespace bytebank.Funcionarios
     // HERANÇA
     internal class Diretor : Funcionario
     {
+        //public override double GetBonificacao()
+        //{
+        //    // base = invoca elementos da superclasse
+        //    return this.Salario + base.GetBonificacao();
+        //}
+
         public override double GetBonificacao()
         {
-            // base = invoca elementos da superclasse
-            return this.Salario + base.GetBonificacao();
+
+            return this.Salario * 0.2 ;
         }
 
-        public Diretor(string cpf):base(cpf)
+        public Diretor(string cpf):base(cpf,5000)
         {
             
         }

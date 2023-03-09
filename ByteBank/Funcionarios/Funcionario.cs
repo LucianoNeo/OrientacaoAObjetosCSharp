@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace bytebank.Funcionarios
 {
-    public class Funcionario
+    // uma classe abstrata não permite que se criem objetos diretamente dela, mas somente de suas heranças
+    public abstract class Funcionario
     {
 
         public static int TotalDeFuncionarios { get; private set; }
@@ -16,22 +17,24 @@ namespace bytebank.Funcionarios
         public double Salario { get; protected set; }
 
         // virtual define que o método pode ter override na classe que herdar esta superclasse
-        public virtual double GetBonificacao()
-        {
-          
-            return this.Salario *0.1;
-        }
+        //public virtual double GetBonificacao()
+        //{
 
-        public Funcionario(string cpf)
+        //    return this.Salario *0.1;
+        //}
+
+        public abstract double GetBonificacao();
+       
+
+        public Funcionario(string cpf,double salario)
         {
             this.Cpf = cpf;
+            this.Salario = salario;
             TotalDeFuncionarios++;
         }
 
-        public virtual void AumentarSalario()
-        {
-            this.Salario = this.Salario + (this.Salario * 0.1);
-        }
+        public virtual void AumentarSalario();
+       
 
         public void SetSalario(double valor)
         {
