@@ -33,7 +33,7 @@ namespace bytebank.Funcionarios
             TotalDeFuncionarios++;
         }
 
-        public virtual void AumentarSalario();
+        public abstract void AumentarSalario();
        
 
         public void SetSalario(double valor)

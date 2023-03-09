@@ -1,5 +1,6 @@
 ﻿using bytebank.Contas;
 using bytebank.Funcionarios;
+using bytebank.SistemaInterno;
 using bytebank.Titular;
 using bytebank.Utilitario;
 
@@ -85,7 +86,7 @@ void CalcularBonificacao()
     maycon.Nome = "Maycon José";
 
     Diretor paula = new Diretor("04658795410");
-    paula.Nome = "Paula tejano";
+    paula.Nome = "Paula Tejano";
 
     Auxiliar igor = new Auxiliar("04658795410");
     igor.Nome = "Igor Naveia";
@@ -99,4 +100,21 @@ void CalcularBonificacao()
     Console.WriteLine("Total de bonificação: " + gerenciador.TotalDeBonificacao);
 }
 
-CalcularBonificacao();
+
+
+void UsarSistema(){
+    SistemaInterno sistema = new SistemaInterno();
+    
+    Diretor ingrid = new Diretor("12345603454");
+    ingrid.Nome = "Ingrid Ramos";
+    ingrid.Senha = "1234";
+
+    GerenteDeConta ursula = new GerenteDeConta("87456123546");
+    ursula.Nome = "Ursula Bezerra";
+    ursula.Senha = "4321";
+
+    sistema.Logar(ingrid, "1234");
+    sistema.Logar(ursula, "4321");
+}
+
+UsarSistema();
