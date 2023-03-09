@@ -32,3 +32,6 @@ else
 {
     Console.WriteLine("Saldo insuficiente");
 }
+
+ContaCorrente contaDoPedro = new ContaCorrente();
+Console.WriteLine("Saldo do Pedro: R$" + contaDoPedro.saldo);

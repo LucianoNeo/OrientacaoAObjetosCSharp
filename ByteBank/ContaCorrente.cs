@@ -11,7 +11,7 @@ namespace bytebank
         public int numero_agencia;
         public string conta;
         public string titular;
-        public double saldo;
+        public double saldo = 100;
 
 
         public void Depositar(double valor)
