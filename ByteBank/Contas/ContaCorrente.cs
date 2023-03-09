@@ -10,10 +10,12 @@ namespace bytebank.Contas
     public class ContaCorrente
     {
         private int numero_agencia;
-        public int Numero_agencia
+
+
+        public int Numero_agencia // PROPRIEDADE com validações
         {
             get { return this.numero_agencia; }
-            set
+            private set
             {
                 if (value > 0)
                 {
@@ -21,10 +23,13 @@ namespace bytebank.Contas
                 }
             }
         }
-        public string conta;
+        // public string conta;
+        public string Conta { get; set; } // PROPRIEDADE com autoimplementação (cria um campo privado com métodos get e set automaticos)
+
+
         private double saldo = 100;
 
-        public Cliente titular;
+        public Cliente Titular { get; set; }
 
         public void Depositar(double valor)
         {
@@ -60,7 +65,7 @@ namespace bytebank.Contas
 
         public void SetSaldo(double valor)
         {
-            if(valor < 0)
+            if (valor < 0)
             {
                 return;
             }
@@ -73,6 +78,12 @@ namespace bytebank.Contas
         public double GetSaldo()
         {
             return this.saldo;
+        }
+
+        public ContaCorrente(int numero_agencia, string numero_conta)
+        {
+            this.Numero_agencia = numero_agencia;
+            this.Conta = numero_conta;
         }
     }
 }
