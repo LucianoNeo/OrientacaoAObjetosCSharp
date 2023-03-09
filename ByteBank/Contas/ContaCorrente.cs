@@ -14,7 +14,7 @@ namespace bytebank.Contas
 
         private int numero_agencia;
 
-
+        // ENCAPSULAMENTO
         public int Numero_agencia // PROPRIEDADE com validações
         {
             get { return this.numero_agencia; }

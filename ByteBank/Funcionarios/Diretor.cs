@@ -6,13 +6,9 @@ using System.Threading.Tasks;
 
 namespace bytebank.Funcionarios
 {
-    internal class Diretor
+    // HERANÇA
+    internal class Diretor : Funcionario
     {
-        public string Nome { get; set; }
-        public string Cpf { get; set; }
-        public double Salario { get; set; }
-
-
         public double GetBonificacao()
         {
 

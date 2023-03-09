@@ -15,10 +15,10 @@ namespace bytebank.Utilitario
         {
             this.TotalDeBonificacao += funcionario.GetBonificacao();
         }
-
-        public void Registrar(Diretor diretor)
-        {
-            this.TotalDeBonificacao += diretor.GetBonificacao();
-        }
+        // sobrecarga de método (usa mesmo método para cuidar de outras classes) POLIMORFISMO *sem herança
+        //public void Registrar(Diretor diretor)
+        //{
+        //    this.TotalDeBonificacao += diretor.GetBonificacao();
+        //}
     }
 }
