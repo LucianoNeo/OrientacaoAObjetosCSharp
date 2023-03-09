@@ -14,5 +14,15 @@ namespace bytebank.Funcionarios
             // base = invoca elementos da superclasse
             return this.Salario + base.GetBonificacao();
         }
+
+        public Diretor(string cpf):base(cpf)
+        {
+            
+        }
+
+        public override void AumentarSalario()
+        {
+            this.Salario *= 1.15;
+        }
     }
 }

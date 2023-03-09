@@ -37,19 +37,17 @@ Console.WriteLine();
 
 Console.WriteLine("######### SESSÃO FUNCIONÁRIOS ##############");
 
-Funcionario pedro = new Funcionario();
+Funcionario pedro = new Funcionario("12345678410");
 pedro.Nome = "Pedro Malazartes";
-pedro.Cpf = "12345678410";
-pedro.Salario = 2000;
+pedro.SetSalario(2000);
 Console.Write("Nome: ");
 Console.WriteLine(pedro.Nome);
 Console.Write("Bonificação: R$");
 Console.WriteLine(pedro.GetBonificacao());
 
-Diretor roberta = new Diretor();
+Diretor roberta = new Diretor("0425468897");
 roberta.Nome = "Roberta Silva";
-roberta.Cpf = "0425468897";
-roberta.Salario = 5000;
+roberta.SetSalario(5000);
 
 Console.Write("Nome: ");
 Console.WriteLine(roberta.Nome);
@@ -61,3 +59,10 @@ gerenciador.Registrar(pedro);
 gerenciador.Registrar(roberta);
 
 Console.WriteLine("Total de bonificações: " + gerenciador.TotalDeBonificacao);
+Console.WriteLine("Total de funcionarios: " + Funcionario.TotalDeFuncionarios);
+
+pedro.AumentarSalario();
+roberta.AumentarSalario();
+
+Console.WriteLine("Novo Salário do Pedro:" + pedro.Salario);
+Console.WriteLine("Novo Salário do Roberta:" + roberta.Salario);

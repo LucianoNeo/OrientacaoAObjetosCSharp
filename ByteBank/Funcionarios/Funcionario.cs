@@ -8,9 +8,12 @@ namespace bytebank.Funcionarios
 {
     public class Funcionario
     {
+
+        public static int TotalDeFuncionarios { get; private set; }
         public string Nome { get; set; }
-        public string Cpf { get; set; }
-        public double Salario { get; set; }
+        public string Cpf { get; private set; }
+        // protected = visivel na propria classes e herdeiros
+        public double Salario { get; protected set; }
 
         // virtual define que o método pode ter override na classe que herdar esta superclasse
         public virtual double GetBonificacao()
@@ -19,5 +22,20 @@ namespace bytebank.Funcionarios
             return this.Salario *0.1;
         }
 
+        public Funcionario(string cpf)
+        {
+            this.Cpf = cpf;
+            TotalDeFuncionarios++;
+        }
+
+        public virtual void AumentarSalario()
+        {
+            this.Salario = this.Salario + (this.Salario * 0.1);
+        }
+
+        public void SetSalario(double valor)
+        {
+            this.Salario = valor;
+        }
     }
 }
