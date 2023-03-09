@@ -8,12 +8,27 @@ contaDoAndre.saldo = 500;
 
 
 
-Console.WriteLine("Saldo da conta: R$" + contaDoAndre.saldo);
+Console.WriteLine("Saldo da conta do André: R$" + contaDoAndre.saldo);
 
-contaDoAndre.Depositar(100);
+ContaCorrente contaDaMaria = new ContaCorrente();
+contaDaMaria.titular = "Maria João";
+contaDaMaria.numero_agencia = 3051;
+contaDaMaria.conta = "1015-X";
+contaDaMaria.saldo = 100;
 
-Console.WriteLine("Saldo atualizado após depósito: R$" + contaDoAndre.saldo);
 
-contaDoAndre.Sacar(50);
+Console.WriteLine("Saldo da conta da Maria: R$" + contaDaMaria.saldo);
 
-Console.WriteLine("Saldo atualizado após saque: R$" + contaDoAndre.saldo);
+
+if (contaDoAndre.Transferir(100, contaDaMaria) == true)
+{
+    Console.WriteLine("Transferindo 100 reais do André para Maria");
+    Console.WriteLine("Saldo transferido com sucesso");
+    Console.WriteLine("Saldo atualizado da conta do André: R$" + contaDoAndre.saldo);
+    Console.WriteLine("Saldo atualizado da conta da Maria: R$" + contaDaMaria.saldo);
+
+}
+else
+{
+    Console.WriteLine("Saldo insuficiente");
+}

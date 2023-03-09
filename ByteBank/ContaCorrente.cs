@@ -19,9 +19,31 @@ namespace bytebank
             this.saldo += valor;
         }
 
-        public void Sacar(double valor)
+        public bool Sacar(double valor)
         {
-            this.saldo -= valor;
+            if (valor <= this.saldo)
+            {
+                this.saldo -= valor;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool Transferir(double valor, ContaCorrente destino)
+        {
+            if (this.saldo < valor)
+            {
+                return false;
+            }
+            else
+            {
+                this.saldo -= valor;
+                destino.saldo += valor;
+                return true;
+            }
         }
     }
 }
