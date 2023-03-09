@@ -9,6 +9,9 @@ namespace bytebank.Contas
 {
     public class ContaCorrente
     {
+        // static = cria uma propriedade DA CLASSE e não do objeto
+        public static int TotaldeContasCriadas { get; private set; }
+
         private int numero_agencia;
 
 
@@ -84,6 +87,7 @@ namespace bytebank.Contas
         {
             this.Numero_agencia = numero_agencia;
             this.Conta = numero_conta;
+            TotaldeContasCriadas++;
         }
     }
 }
