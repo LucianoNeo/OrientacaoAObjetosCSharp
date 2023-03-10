@@ -1,4 +1,5 @@
-﻿using bytebank.Contas;
+﻿using bytebank;
+using bytebank.Contas;
 using bytebank.Funcionarios;
 using bytebank.Parceria;
 using bytebank.SistemaInterno;
@@ -11,11 +12,19 @@ using bytebank.Utilitario;
 
 try
 {
-    ContaCorrente conta1 = new ContaCorrente(0, "1234-X");
+    ContaCorrente conta1 = new ContaCorrente(10, "1234-X");
+    conta1.Sacar(50);
+    conta1.Sacar(150);
 }
 catch (ArgumentException ex)
 {
+    Console.WriteLine(ex.ParamName);
     Console.WriteLine("Não é possível criar uma conta com numero de agencia menor ou igual a 0");
+    Console.WriteLine(ex.Message);
+}
+catch (SaldoInsuficienteException ex)
+{
+    Console.WriteLine(ex.Message) ;
 }
 
 
