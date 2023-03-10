@@ -1,6 +1,8 @@
-﻿namespace bytebank.Funcionarios
+﻿using bytebank.SistemaInterno;
+
+namespace bytebank.Funcionarios
 {
-    public class GerenteDeConta : Funcionario
+    public class GerenteDeConta : Autenticavel
     {
         public GerenteDeConta(string cpf) : base(cpf, 4000)
         {
@@ -17,11 +19,10 @@
             Salario *= 1.05;
         }
 
-        public string Senha { get; set; }
-
-        public bool Autenticar(string senha)
+        public override bool Autenticar(string senha)
         {
             return this.Senha == senha;
         }
+
     }
 }

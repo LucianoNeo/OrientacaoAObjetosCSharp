@@ -34,11 +34,7 @@ namespace bytebank.Funcionarios
         }
 
         public abstract void AumentarSalario();
-       
 
-        public void SetSalario(double valor)
-        {
-            this.Salario = valor;
-        }
+        
     }
 }
