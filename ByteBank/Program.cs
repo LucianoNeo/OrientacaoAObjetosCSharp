@@ -6,25 +6,35 @@ using bytebank.SistemaInterno;
 using bytebank.Titular;
 using bytebank.Utilitario;
 
+try
+{
+    LeitorDeArquivo leitor = new LeitorDeArquivo("contas.txt");
+    leitor.LerProximaLinha();
+    leitor.LerProximaLinha();
+    leitor.Fechar();
+}
+catch (IOException ex)
+{
+    Console.WriteLine(ex.Message);
+}
+
 #region
-
-
 
 try
 {
     ContaCorrente conta1 = new ContaCorrente(0, "1234-X");
     conta1.Sacar(50);
-    
+
 }
 catch (ArgumentException ex)
 {
-    Console.WriteLine("Parametro com erro:" + ex.ParamName);
-    Console.WriteLine(ex.Message);
-    Console.WriteLine(ex.StackTrace);
+    //Console.WriteLine("Parametro com erro:" + ex.ParamName);
+    //Console.WriteLine(ex.Message);
+    //Console.WriteLine(ex.StackTrace);
 }
 catch (SaldoInsuficienteException ex)
 {
-    Console.WriteLine(ex.Message) ;
+    Console.WriteLine(ex.Message);
 }
 
 
