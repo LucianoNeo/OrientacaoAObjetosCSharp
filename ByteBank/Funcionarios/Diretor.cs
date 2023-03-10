@@ -7,15 +7,10 @@ using System.Threading.Tasks;
 
 namespace bytebank.Funcionarios
 {
-    // HERANÇA
-    public class Diretor : Autenticavel
+    // HERANÇA 
+    public class Diretor : FuncionarioAutenticavel
     {
-        //public override double GetBonificacao()
-        //{
-        //    // base = invoca elementos da superclasse
-        //    return this.Salario + base.GetBonificacao();
-        //}
-
+              
         public override double GetBonificacao()
         {
 
@@ -32,9 +27,5 @@ namespace bytebank.Funcionarios
             this.Salario *= 1.15;
         }
 
-        public override bool Autenticar(string senha)
-        {
-            return this.Senha == senha;
-        }
     }
 }

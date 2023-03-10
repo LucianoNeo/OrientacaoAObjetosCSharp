@@ -12,6 +12,9 @@ namespace bytebank.Contas
         // static = cria uma propriedade DA CLASSE e não do objeto
         public static int TotaldeContasCriadas { get; private set; }
 
+        public static float TaxaOperacao { get; private set; }
+
+
         private int numero_agencia;
 
         // ENCAPSULAMENTO
@@ -87,6 +90,17 @@ namespace bytebank.Contas
         {
             this.Numero_agencia = numero_agencia;
             this.Conta = numero_conta;
+
+            try
+            {
+            TaxaOperacao = 30 / TotaldeContasCriadas;
+
+            }
+            catch (DivideByZeroException)
+            {
+                Console.WriteLine("ERRO! Divisão por zero!");
+            }
+
             TotaldeContasCriadas++;
         }
     }

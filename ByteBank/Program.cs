@@ -1,77 +1,17 @@
 ﻿using bytebank.Contas;
 using bytebank.Funcionarios;
+using bytebank.Parceria;
 using bytebank.SistemaInterno;
 using bytebank.Titular;
 using bytebank.Utilitario;
 
 #region
-//Console.WriteLine("######### SESSÃO CONTAS E CLIENTES ##############");
-//Cliente cliente = new Cliente();
-//cliente.Nome = "André Silva";
-//cliente.Cpf = "05265478910";
-//cliente.Profissao = "Analista";
-
-//ContaCorrente conta = new ContaCorrente(18,"2356-D");
-//conta.Titular = cliente;
-//conta.SetSaldo(+100);
-
-
-//ContaCorrente conta2 = new ContaCorrente(15,"1510-X");
-//conta2.Titular = new Cliente();
-//conta2.Titular.Nome = "José Souza";
-//conta2.Titular.Profissao = "Tester";
-//conta2.Titular.Cpf = "32145698710";
-//conta2.SetSaldo(300);
-//conta2.Sacar(100);
-
-
-//ContaCorrente conta4 = new ContaCorrente(18,"2010-X");
-//conta4.SetSaldo(500);
-//conta4.Titular = new Cliente();
-//Console.WriteLine(conta4.GetSaldo());
-
-//Console.WriteLine(ContaCorrente.TotaldeContasCriadas);
-
-
-//Console.WriteLine("################################");
+ContaCorrente conta1 = new ContaCorrente(283, "1234-X");
+Console.WriteLine(ContaCorrente.TaxaOperacao);
 
 #endregion
 
 #region
-//Console.WriteLine("######### SESSÃO FUNCIONÁRIOS ##############");
-
-//Funcionario pedro = new Funcionario("12345678410",2000);
-//pedro.Nome = "Pedro Malazartes";
-
-//Console.Write("Nome: ");
-//Console.WriteLine(pedro.Nome);
-//Console.Write("Bonificação: R$");
-//Console.WriteLine(pedro.GetBonificacao());
-
-//Diretor roberta = new Diretor("0425468897");
-//roberta.Nome = "Roberta Silva";
-
-
-//Console.Write("Nome: ");
-//Console.WriteLine(roberta.Nome);
-//Console.Write("Bonificação: R$");
-//Console.WriteLine(roberta.GetBonificacao());
-
-//GerenciadorDeBonificacao gerenciador = new GerenciadorDeBonificacao();
-//gerenciador.Registrar(pedro);
-//gerenciador.Registrar(roberta);
-
-//Console.WriteLine("Total de bonificações: " + gerenciador.TotalDeBonificacao);
-//Console.WriteLine("Total de funcionarios: " + Funcionario.TotalDeFuncionarios);
-
-//pedro.AumentarSalario();
-//roberta.AumentarSalario();
-
-//Console.WriteLine("Novo Salário do Pedro:" + pedro.Salario);
-//Console.WriteLine("Novo Salário do Roberta:" + roberta.Salario);
-
-    #endregion
-
 void CalcularBonificacao()
 {
     GerenciadorDeBonificacao gerenciador = new GerenciadorDeBonificacao();
@@ -113,11 +53,14 @@ void UsarSistema(){
     ursula.Nome = "Ursula Bezerra";
     ursula.Senha = "4321";
 
-
+    ParceiroComercial caio = new ParceiroComercial();
+    caio.Senha = "999";
 
     sistema.Logar(ingrid, "1234");
     sistema.Logar(ursula, "121");
+    sistema.Logar(caio, "99");
 
 }
 
 UsarSistema();
+#endregion
