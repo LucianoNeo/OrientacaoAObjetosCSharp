@@ -90,16 +90,19 @@ namespace bytebank.Contas
         {
             this.Numero_agencia = numero_agencia;
             this.Conta = numero_conta;
-
-            try
+            if(numero_agencia >= 0)
             {
-            TaxaOperacao = 30 / TotaldeContasCriadas;
+                throw new ArgumentException("Número de agência menor ou igual a zero!");
+            }
+            //try
+            //{
+            //TaxaOperacao = 30 / TotaldeContasCriadas;
 
-            }
-            catch (DivideByZeroException)
-            {
-                Console.WriteLine("ERRO! Divisão por zero!");
-            }
+            //}
+            //catch (DivideByZeroException)
+            //{
+            //    Console.WriteLine("ERRO! Divisão por zero!");
+            //}
 
             TotaldeContasCriadas++;
         }
