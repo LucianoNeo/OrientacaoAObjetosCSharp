@@ -12,15 +12,15 @@ using bytebank.Utilitario;
 
 try
 {
-    ContaCorrente conta1 = new ContaCorrente(10, "1234-X");
+    ContaCorrente conta1 = new ContaCorrente(0, "1234-X");
     conta1.Sacar(50);
-    conta1.Sacar(150);
+    
 }
 catch (ArgumentException ex)
 {
-    Console.WriteLine(ex.ParamName);
-    Console.WriteLine("Não é possível criar uma conta com numero de agencia menor ou igual a 0");
+    Console.WriteLine("Parametro com erro:" + ex.ParamName);
     Console.WriteLine(ex.Message);
+    Console.WriteLine(ex.StackTrace);
 }
 catch (SaldoInsuficienteException ex)
 {
