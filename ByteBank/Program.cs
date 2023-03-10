@@ -6,16 +6,20 @@ using bytebank.SistemaInterno;
 using bytebank.Titular;
 using bytebank.Utilitario;
 
+    LeitorDeArquivo leitor = new LeitorDeArquivo("contas.txt");
 try
 {
-    LeitorDeArquivo leitor = new LeitorDeArquivo("contas.txt");
     leitor.LerProximaLinha();
     leitor.LerProximaLinha();
-    leitor.Fechar();
 }
 catch (IOException ex)
 {
-    Console.WriteLine(ex.Message);
+    Console.WriteLine("Erro na leitura do arquivo!");
+}
+finally
+{
+    leitor.Fechar();
+
 }
 
 #region
